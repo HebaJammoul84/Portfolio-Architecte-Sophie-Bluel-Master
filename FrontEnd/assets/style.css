@@ -34,6 +34,12 @@ body {
 ol, ul {
 	list-style: none;
 }
+
+a {
+	cursor: pointer;
+	all: initial; 
+}
+
 blockquote, q {
 	quotes: none;
 }
@@ -185,4 +191,32 @@ footer nav ul {
 	justify-content: flex-end;
 	margin: 2em
 }
+
+/***************** filtres *****************/
+
+.filtres {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 50px;
+	margin-top: 50px;
+	gap: 10px;
+}
+
+.filtre {
+	font-family: 'Syne';
+	color: #1D6154;
+	border-radius: 60px;
+	border: 1px solid #1D6154;
+	padding: 0.6% 1%;
+	
+}
+
+.filtre:hover {
+	cursor: pointer;
+	color: white;
+	background-color: #1D6154;
+	
+}  
+
+
 
