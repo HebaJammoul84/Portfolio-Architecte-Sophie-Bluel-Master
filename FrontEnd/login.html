@@ -8,48 +8,54 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
-	<link rel="stylesheet" href="./assets/login.css">
+	<link rel="stylesheet" href="./assets/style.css">
 </head>
+
 <body>
-<header>
-	<h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
-	<nav>
-		<ul>
-			<li><a href="./index.html">projets</a></li>
-			<li>contact</li>
-			<li>login</li>
-			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
-		</ul>
-	</nav>
-</header>
-<main>
+	<div class="body-container">
 
-    <h1>Log In</h1>
-			<div class="login">
+		<header>
+			<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
+			<nav>
+				<ul>
+					<li><a href="./index.html">projets</a></li>
+					<li><a href="#contact">contact</a></li>
+					<li><a href="./login.html">login</a></li>
+					<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+				</ul>
+			</nav>
+		</header>
+				
+		<main>
 
-				<div class="login-input">
-					<span>E-mail</span>
-					<input type="text" id="input-mail">
-				</div>
+			<section id="login">
+				<h2>Log In</h2>
 
-				<div class="login-input">
-					<span>Mot de passe</span>
-					<input type="text" id="input-Motdepasse">
-				</div>
+				<form class="loginForm" action="#">
+					<label for="email">E-mail</label>
+					<input type="email" name="email" id="email">
+					<label for="password">Mot de passe</label>
+					<input type="password" name="password" id="password">
+					<p id="error-message"></p>
+					
+					<input type="submit" value="Se connecter"></input>
+				</form>
+				
+				<a href="#">Mot de passe oublié</a>
+			</section>
 
-				<button type="submit">Se connecter</button>
-				<a href=""><span>Mot de passe oublié</span></a>
+		</main>
+		
+		<footer id="login_footer">
+			<nav>
+				<ul>
+					<li>Mentions Légales</li>
+				</ul>
+			</nav>
+		</footer>
+	</div>
 
-			</div>
-	
-</main>
+	<script type="text/javascript" src="login.js"></script>
 
-<footer>
-	<nav>
-		<ul>
-			<li>Mentions Légales</li>
-		</ul>
-	</nav>
-</footer>
 </body>
 </html>
