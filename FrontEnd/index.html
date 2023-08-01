@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Sophie Bluel - Architecte d'intérieur</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap"
+		rel="stylesheet">
 	<meta name="description" content="">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+		integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" href="./assets/style.css">
 	<link rel="stylesheet" href="./assets/all.min.css">
 </head>
@@ -16,7 +20,7 @@
 <body>
 
 	<div class="editor-banner" id="editor-mode" style="display: none;">
-		
+
 		<p class="editor-banner-content ">
 			<i class="fa-regular fa-pen-to-square fa-lg"></i>
 			Mode édition
@@ -24,6 +28,34 @@
 		<button class="editor-button">publier les changements</button>
 
 	</div>
+
+	<div class="body-container">
+		<aside id="Modal1" class="modal" aria-hidden="true" role="" aria-modal="false" style="display: none;">
+
+			<div class="modal-wrapper modal-wrapper-gallery">
+
+				<p class="modal-close gallery-modal-close">
+					<i class="fa-solid fa-xmark"></i>
+				</p>
+				
+				<h3>Galerie photo</h3>
+				<div class="modal-gallery"></div>
+				<hr>
+
+				<div class="gallery-modif-submit">
+					<button class="modal-gallery-btn">Ajouter une photo
+						<input type="file" style="display: none;">
+					</button>
+					<p >
+					<a href="#" class="delete-gallery">Supprimer la galerie </a>
+					</p>
+				</div>
+				
+			</div>
+
+		</aside>
+	</div>
+
 
 	<header>
 		<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
@@ -64,11 +96,12 @@
 		<section id="portfolio">
 			<div class="portfolio-title">
 				<h2>Mes Projets</h2>
-				
-				<a class="editor-content" id="editor-element">
+
+				<a class="editor-content modal-link" id="editor-element">
 					<i class="fa-regular fa-pen-to-square fa-lg"></i>
 					modifier
 				</a>
+
 			</div>
 
 			<div class="filters-container"></div>
@@ -100,4 +133,5 @@
 
 	<script type="text/javascript" src="main.js"></script>
 </body>
+
 </html>
