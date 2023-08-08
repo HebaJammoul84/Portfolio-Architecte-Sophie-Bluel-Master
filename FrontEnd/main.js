@@ -13,7 +13,7 @@ const appelTravaux = async () => {
     }
 };
 
-appelTravaux();
+
 
 ////////////////// Affichage Travaux //////////////////
 
@@ -35,9 +35,9 @@ const affichageTravaux = (works) => {
     });
 };
 
-// Utilisation de la fonction appelTravaux pour obtenir les données et afficher les travaux
+ //Utilisation de la fonction appelTravaux pour obtenir les données et afficher les travaux
 appelTravaux().then((works) => {
-    affichageTravaux(works);
+   affichageTravaux(works);
 });
 
 ////////////////// Filters ////////////////// 
@@ -103,17 +103,6 @@ const filters = async (works) => {
 
 ////////////////// Affichage Editeur / Logout //////////////////
 
-async function hideFilters() {
-    const filterBtns = document.querySelectorAll(".btn");
-    if (token) {
-        // Masquer les boutons de filtre
-        filterBtns.forEach((filterBtn) => {
-            filterBtn.style.display = "none";
-            filtersContainer.style.display = "none";
-        })
-    }
-}
-
 async function affichageEditeur() {
     const loginLink = document.querySelector(".login-link");
     const token = localStorage.getItem("token");
@@ -124,16 +113,15 @@ async function affichageEditeur() {
     // Masquer les éléments du mode éditeur
     editorMode.style.display = "none";
     editorElements.forEach((editorElement) => {
-        editorElement.style.display = "none";
+    editorElement.style.display = "none";
     });
 
     if (token) {
         // Masquer les boutons de filtre
-        // filterBtns.forEach((filterBtn) => {
-        //  filterBtn.style.display = "none";
-        //});
+         filterBtns.forEach((filterBtn) => {
+         filterBtn.style.display = "none";
+        });
 
-        hideFilters()
 
         // Afficher les éléments du mode éditeur en flex
         editorElements.forEach((editorElement) => {
@@ -442,7 +430,7 @@ async function Affichage() {
     // Récupérer la liste des works
     const works = await appelTravaux()
     // Afficher la liste des works dans la page
-    affichageTravaux(works)
+   // affichageTravaux(works)
     filters(works)
     affichageEditeur()
 }
