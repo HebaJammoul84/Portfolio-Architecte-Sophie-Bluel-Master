@@ -14,10 +14,11 @@
 		integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" href="./assets/style.css">
-	<link rel="stylesheet" href="./assets/all.min.css">
+
 </head>
 
 <body>
+              <!----  Editor Banner ---->
 
 	<div class="editor-banner" id="editor-mode" style="display: none;">
 
@@ -30,6 +31,9 @@
 	</div>
 
 	<div class="body-container">
+
+		      <!---- La première partie modal ---->
+
 		<aside id="Modal1" class="modal" aria-hidden="true" role="" aria-modal="false" style="display: none;">
 
 			<div class="modal-wrapper modal-wrapper-gallery">
@@ -37,7 +41,7 @@
 				<p class="modal-close gallery-modal-close">
 					<i class="fa-solid fa-xmark"></i>
 				</p>
-				
+
 				<h3>Galerie photo</h3>
 				<div class="modal-gallery"></div>
 				<hr>
@@ -46,14 +50,53 @@
 					<button class="modal-gallery-btn">Ajouter une photo
 						<input type="file" style="display: none;">
 					</button>
-					<p >
-					<a href="#" class="delete-gallery">Supprimer la galerie </a>
+					<p>
+						<a href="#" class="delete-gallery">Supprimer la galerie </a>
 					</p>
 				</div>
-				
 			</div>
 
-		</aside>
+               <!----  La deuxième partie modal ---->
+
+			<div class="modal-wrapper modal-add-project" style="display: none;">
+				<i class="fa-solid fa-arrow-left" id="previous-arrow"></i>
+				<p class="modal-close add-modal-close"><i class="fa-solid fa-xmark"></i></p>
+				<h3>Ajout photo</h3>
+
+				<div class="add-image">
+
+					<div class="add-project-image" style="display: none;"></div>
+					<i class="fa-regular fa-image"></i>
+					<button class="add-image-btn ">+ Ajouter photo</button>
+					<p class="add-image-format">jpg, png : 4mo max</p>
+
+				</div>
+
+				<div class="form-container">
+
+					<form id="upload-form" enctype="multipart/form-data">
+						<label for="title">Titre</label>
+						<input type="text" name="title" id="title">
+						<label for="category">Catégorie</label>
+						<select id="category" name="category">
+							<option value="default"></option>
+							<option value="1">Objets</option>
+							<option value="2">Appartements</option>
+							<option value="3">Hotels & restaurants</option>
+							<option value="4">Bar & Restaurant</option>
+						</select>
+					</form>
+
+				</div>
+				<hr>
+				<div class="gallery-modif-submit">
+					<button class="modal-btn modal-add-btn">Valider
+					</button>
+				</div>
+
+			</div>
+
+	</aside>
 	</div>
 
 
@@ -104,8 +147,11 @@
 
 			</div>
 
+                 <!----  Importer les travaux depuis API ---->
+
 			<div class="filters-container"></div>
 			<div class="gallery"></div>
+
 		</section>
 
 		<section id="contact">
