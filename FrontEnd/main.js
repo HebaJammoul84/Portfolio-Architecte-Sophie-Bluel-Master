@@ -35,9 +35,9 @@ const affichageTravaux = (works) => {
     });
 };
 
-//Utilisation de la fonction appelTravaux pour obtenir les données et afficher les travaux
-appelTravaux().then((works) => {
-    affichageTravaux(works);
+// Utilisation de la fonction appelTravaux pour obtenir les données et afficher les travaux
+  appelTravaux().then((works) => {
+  affichageTravaux(works);
 });
 
 ////////////////// Filters ////////////////// 
@@ -164,7 +164,8 @@ const modalAddBtn = document.querySelector(".modal-add-btn");
 
 // Fonction pour créer les éléments de la modal de galerie
 async function modalGalleryElement() {
-    const works = await appelTravaux(); // Appeler les travaux
+    const works = await appelTravaux();
+    
     works.forEach(work => {
 
         const modalFigure = document.createElement("div");
