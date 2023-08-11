@@ -35,9 +35,9 @@ const affichageTravaux = (works) => {
     });
 };
 
- //Utilisation de la fonction appelTravaux pour obtenir les données et afficher les travaux
+//Utilisation de la fonction appelTravaux pour obtenir les données et afficher les travaux
 appelTravaux().then((works) => {
-   affichageTravaux(works);
+    affichageTravaux(works);
 });
 
 ////////////////// Filters ////////////////// 
@@ -113,13 +113,13 @@ async function affichageEditeur() {
     // Masquer les éléments du mode éditeur
     editorMode.style.display = "none";
     editorElements.forEach((editorElement) => {
-    editorElement.style.display = "none";
+        editorElement.style.display = "none";
     });
 
     if (token) {
         // Masquer les boutons de filtre
-         filterBtns.forEach((filterBtn) => {
-         filterBtn.style.display = "none";
+        filterBtns.forEach((filterBtn) => {
+            filterBtn.style.display = "none";
         });
 
 
@@ -282,18 +282,18 @@ async function hideModal() { // Fonction pour cacher la modal
     affichageTravaux(works);
 }
 
-   // Gestionnaires d'événements pour la fermeture de la modal
-    galleryModalClose.addEventListener("click", hideModal);
-    addModalClose.addEventListener("click", hideModal);
-    modal.addEventListener("click", hideModal);
+// Gestionnaires d'événements pour la fermeture de la modal
+galleryModalClose.addEventListener("click", hideModal);
+addModalClose.addEventListener("click", hideModal);
+modal.addEventListener("click", hideModal);
 
-    // Empêcher la propagation des événements lors du clic à l'intérieur de la modal
-    modalWrapperGallery.addEventListener("click", (e) => {
+// Empêcher la propagation des événements lors du clic à l'intérieur de la modal
+modalWrapperGallery.addEventListener("click", (e) => {
     e.stopPropagation();
 });
 
-    // Empêcher la propagation des événements lors du clic à l'intérieur de la modal d'ajout de photo
-    modalAddPhoto.addEventListener("click", (e) => {
+// Empêcher la propagation des événements lors du clic à l'intérieur de la modal d'ajout de photo
+modalAddPhoto.addEventListener("click", (e) => {
     e.stopPropagation();
 });
 
@@ -334,8 +334,8 @@ function sendPictureToAPI() { // Fonction pour envoyer de nouvelles images à l'
         });
 }
 
-     // Affichage de la modalegallery quand on click sur l'élément' qui a la classe modal-link
-    modalLink.addEventListener("click", async (e) => {
+// Affichage de la modalegallery quand on click sur l'élément' qui a la classe modal-link
+modalLink.addEventListener("click", async (e) => {
     e.preventDefault(); // Empêche le chargement par défaut d'une nouvelle page
     modal.style.display = "flex";
 
@@ -344,15 +344,15 @@ function sendPictureToAPI() { // Fonction pour envoyer de nouvelles images à l'
     await modalGalleryElement();
 });
 
-    // Affichage de la modalAddphoto au click sur le galleryBTN
-    galleryBtn.addEventListener("click", (e) => {
+// Affichage de la modalAddphoto au click sur le galleryBTN
+galleryBtn.addEventListener("click", (e) => {
     e.preventDefault();
     modalWrapperGallery.style.display = "none";
     modalAddPhoto.style.display = "block";
 });
 
 // Ajout d'une image au click sur le addImageButton
-    addImageButton.addEventListener("click", (e) => {
+addImageButton.addEventListener("click", (e) => {
     e.preventDefault();
 
     // Supprimer tous les input de fichier existants
@@ -407,14 +407,14 @@ function sendPictureToAPI() { // Fonction pour envoyer de nouvelles images à l'
     });
 });
 
-   // Requête post au click sur le modalAddBtn pour envoyé les nouveaux projets
-    modalAddBtn.addEventListener("click", async (e) => {
+// Requête post au click sur le modalAddBtn pour envoyé les nouveaux projets
+modalAddBtn.addEventListener("click", async (e) => {
     e.preventDefault();
     sendPictureToAPI();
 });
 
-    // Click sur previousarrow en revient sur la modal wrapper gallery
-    previousArrow.addEventListener("click", async (e) => {
+// Click sur previousarrow en revient sur la modal wrapper gallery
+previousArrow.addEventListener("click", async (e) => {
     e.preventDefault();
     modalAddPhoto.style.display = "none";
     modalWrapperGallery.style.display = "";
@@ -427,11 +427,8 @@ function sendPictureToAPI() { // Fonction pour envoyer de nouvelles images à l'
 ////////////////// Affichage ////////////////// 
 
 async function Affichage() {
-    // Récupérer la liste des works
-    const works = await appelTravaux()
-    // Afficher la liste des works dans la page
-   // affichageTravaux(works)
-    filters(works)
+    const works = await appelTravaux() // Récupérer la liste des works
+    await filters(works) // affichageTravaux(works)
     affichageEditeur()
 }
 
